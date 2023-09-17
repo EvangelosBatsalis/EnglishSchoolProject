@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="gr"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New Index</title>
+</head>
+<body>
+ <div>
+     <p>
+<!--         <p th:if="${emp.id == null}"> No available</p>-->
+
+         <strong>ID: </strong> <span th:text="${emp.get().getId()}"></span><br>
+         <strong>First Name: </strong> <span th:text="${emp.get().getFName()}"></span><br>
+         <strong>Last Name: </strong> <span th:text="${emp.get().getLName()}"></span>
+     </p>
+     <br>
+     <br>
+     <br>
+
+
+ </div>
+</body>
+</html>
