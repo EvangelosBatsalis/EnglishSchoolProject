@@ -6,8 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 
-//For case in use with JdbcTemplate
-
+//Only if with the use of JdbcTemplate
 @Configuration
 public class AppJdbcTemplateConfig {
 
