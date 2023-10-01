@@ -56,7 +56,6 @@ public class FormController {
 
         employees.setFName(fname);
         employees.setLName(lname);
-
         employeeService.saveEmployee(employees);
 
 
