@@ -39,25 +39,22 @@ public class FormController {
     }
 
     @GetMapping("/save")
-    private String indexGetFormHandler (Employees employees){
+    private String indexGetFormHandler (){
         return "index";
     }
 
     @PostMapping("/save")
     public String indexPostFormHandler(@Valid Employees employees, BindingResult bindingResult, Model model,
-                                  @ModelAttribute("fname") String fname,
-                                  @ModelAttribute("lname") String lname) {
+                                  @ModelAttribute("fName") String fname,
+                                  @ModelAttribute("lName") String lname) {
 
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             System.out.println(bindingResult);
             return "index";
         }
 
 
-        employees.setFName(fname);
-        employees.setLName(lname);
         employeeService.saveEmployee(employees);
-
 
         return "index";
     }

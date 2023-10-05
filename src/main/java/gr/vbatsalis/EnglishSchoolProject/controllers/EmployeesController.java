@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import java.util.Optional;
 
 @Controller
@@ -28,12 +32,12 @@ public class EmployeesController {
         return "index_new";
     }
 
-    @GetMapping("/save")
-    private String SaveEmployeeById(Model model) {
-        Optional<Employees> emp = employeeService.findById(1);
+    @GetMapping("/update/{id}/{fname}")
+    private String SaveEmployeeById(Model model, @PathVariable int id, @PathVariable(value = "fname", required = false) String fName) {
+        Optional<Employees> emp = employeeService.findById(id);
 
         emp.ifPresent(empl -> {
-            empl.setFName("AAD");
+            empl.setFName(fName);
             employeeService.saveEmployee(empl);
         });
 
