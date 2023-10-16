@@ -42,8 +42,10 @@ public class EmployeesController {
         });
 
         model.addAttribute("emp", emp);
-
+//        return null
         return "index_new";
     }
+
+
 
 }
